@@ -4,7 +4,7 @@ This is a fork of <a href="https://github.com/tshort/dactyl-keyboard">The Dactyl
 This keyboard is a parameterized, split-hand, concave, columnar, ergonomic keyboard.
 
 ## Support
-You can support this project further developement and other keyboard related projects by visiting us at <a href="https://www.k33b.com">K33B.com</a> and purchasing a keyboard. Thank you.
+You can support this project further developement and our other keyboard related projects by visiting us at <a href="https://www.k33b.com">K33B.com</a> and purchasing a keyboard. Thank you.
 
 ## Features
 - Change the tilt and curvature of the keyboard.
@@ -30,7 +30,7 @@ You can support this project further developement and other keyboard related pro
 
 ## License
 
-Copyright © 2015-2023 Matthew Adereth, Tom Short, Leo Lou, Matija Golub
+Copyright © 2015-2023 Matthew Adereth, Tom Short, Leo Lou, Matija Golub.
 
 The source code for generating the models is distributed under the [GNU AFFERO GENERAL PUBLIC LICENSE Version 3](LICENSE).
 
