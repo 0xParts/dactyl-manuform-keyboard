@@ -171,6 +171,13 @@
       )
     )
 
+    ; corner hot-fix for tightly
+    (rotate [0 (deg2rad 25) (deg2rad 40)]
+      (translate [16.5 3 5]
+        (cube 10 10 10)
+      )
+    )
+
     ; hot-swap socket hole
     (scale [1 1 1]
     (translate [0.075 4.815 (- -2.75 socket-height-adjust)]
@@ -1602,10 +1609,10 @@
     ; thumb tweeners
     (wall-brace thumb-r-place 0 -1 web-post-bl thumb-m-place 0 -1 web-post-br)
     (wall-brace thumb-m-place 0 -1 web-post-bl thumb-l-place 0 -1 web-post-br)
-    (wall-brace thumb-m-place 0 1 web-post-tl thumb-l-place 0 1 web-post-tr)
+    ;(wall-brace thumb-m-place 0 1 web-post-tl thumb-l-place 0 1 web-post-tr)
     (wall-brace thumb-l-place -1 0 web-post-bl thumb-l-place -1 0 web-post-tl)
 
-    (wall-brace (partial left-key-place cornerrow -1) -1 0 web-post thumb-m-place 0 1 web-post-tl) 
+    (wall-brace (partial left-key-place cornerrow -1) -1 0 web-post thumb-l-place 0 1 web-post-tr) 
     
     (hull
       (left-key-place cornerrow -1 web-post)
@@ -1617,6 +1624,11 @@
       (key-place 0 cornerrow web-post-bl)
       (thumb-m-place web-post-tr)
       (thumb-r-place web-post-tl)
+    )
+    (hull
+      (thumb-m-place web-post-tl)
+      (thumb-l-place web-post-tr)
+      (left-key-place cornerrow -1 web-post)
     )
   )
 )
@@ -1677,8 +1689,8 @@
 ; Cutout for controller/trrs jack holder
 (def usb-holder-ref (key-position 0 0 (map - (wall-locate2  0  -1) [0 (/ mount-height 2) 0])))
 (def usb-holder-position (map + [(+ 18.8 holder-offset) 18.7 1.3] [(first usb-holder-ref) (second usb-holder-ref) 2]))
-(def usb-holder-space  (translate (map + usb-holder-position [-1.5 (* -1 wall-thickness) 2.9]) (cube 28.666 30 15.4)))
-(def usb-holder-notch  (translate (map + usb-holder-position [-1.5 (+ 4.75 notch-offset) 2.9]) (cube 31.366 1.3 15.4)))
+(def usb-holder-space  (translate (map + usb-holder-position [-1.5 (* -1 wall-thickness) 4.4]) (cube 28.666 30 15.4)))
+(def usb-holder-notch  (translate (map + usb-holder-position [-1.5 (+ 4.75 notch-offset) 4.4]) (cube 31.366 1.3 15.4)))
 (def trrs-notch        (translate (map + usb-holder-position [-10.33 (+ 3.6 notch-offset) 6.6]) (cube 8.4 2.4 19.8)))
 
 ; Screw insert definition & position
@@ -2283,7 +2295,7 @@
 (def model-right-plate
   (project
     (extrude-linear {:height 3}
-      (scale [0.999 0.999 0]
+      (scale [0.996 0.996 0]
         (difference
           (fill
             (cut

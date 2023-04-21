@@ -5,7 +5,7 @@ difference () {
         linear_extrude (height=3){
           projection (cut = false) {
             linear_extrude (height=3, center=true){
-              scale ([0.999, 0.999, 0]) {
+              scale ([0.996, 0.996, 0]) {
                 difference () {
                   fill () {
                     projection (cut = true) {
